@@ -1,9 +1,3 @@
-#### A Nutirition Tracker
+#### A Music Search Tool
 ---
-##### To track dietary habits
-
-* API Key ndb.nal.usda.gov
-  * csRiXkMbxnwAs5RaNznqrdIOCmFZlDT5ysjPJgEF
-
-* Ex Request:
-  * https://api.data.gov/nrel/alt-fuel-stations/v1/nearest.json?api_key=csRiXkMbxnwAs5RaNznqrdIOCmFZlDT5ysjPJgEF&location=Denver+CO
+##### Search for music by Lyric, Title, Artist. - Get links to video, stream, and add to playlists

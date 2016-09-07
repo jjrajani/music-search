@@ -1,0 +1,40 @@
+$footerHeight: 60px;
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  min-width: 100%;
+  border: solid blue 1px;
+  position: relative;
+}
+
+.content {
+  width: 100%;
+  border: solid purple 10px;
+  margin-bottom: $footerHeight;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  border: solid red 1px;
+  width: 100%;
+  height: $footerHeight;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  color: rgba(111,111,111,0.8);
+  letter-spacing: 0.08em;
+}

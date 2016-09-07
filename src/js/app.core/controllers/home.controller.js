@@ -1,5 +1,5 @@
 import $ from 'jquery';
-function HomeController ($scope, SearchService) {
+function HomeController ($scope, SearchService, TemplateService) {
 
   let vm = this;
   vm.search = search;
@@ -7,16 +7,13 @@ function HomeController ($scope, SearchService) {
   function search(search) {
     $("#results").empty();
     SearchService.search(search).then( songs => {
+      let i = 0;
       songs.data.forEach(song=> {
-        var result = {
-          title: song.title,
-          lyrics: song.snippet
+        while (i < 8) {
+          console.log(song)
+          TemplateService.searchResultTpl(song)
+          i++;
         }
-        var resultHTML = `<li class="result">
-                          <p>Title: ${result.title}</p>
-                          <p>Lyrics: ${result.lyrics}</p>
-                          </li>`
-        $("#results").append(resultHTML);
       })
     })
   }
@@ -24,5 +21,5 @@ function HomeController ($scope, SearchService) {
 
 }
 
-HomeController.inject = ['$scope', 'SearchService'];
+HomeController.inject = ['$scope', 'SearchService', 'TemplateService'];
 export { HomeController };

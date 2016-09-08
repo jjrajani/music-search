@@ -23,6 +23,7 @@ function HomeController ($scope, SearchService, TemplateService, ClickService) {
           }
         })
         ClickService.findYouTubes()
+        ClickService.findSpotifies()
       })
       a++;
     }

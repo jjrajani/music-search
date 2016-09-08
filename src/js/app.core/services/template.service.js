@@ -14,6 +14,7 @@ function TemplateService () {
                         <p>Artist: ${result.artist}</p>
                         <p>Title: ${result.title}</p>
                         <i class="fa fa-youtube ${result.title} ${result.artist}" aria-hidden="true"></i>
+                        <i class="fa fa-spotify ${result.title} ${result.artist}" aria-hidden="true"></i>
                         <p>Lyrics: ${result.lyrics}</p>
                       </li>`
     $("#results").append(resultHTML);

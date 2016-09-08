@@ -9,10 +9,11 @@ function SearchService () {
   let baseURL = `http://api.lyricsnmusic.com/songs?`;
   let apiKey = `api_key=78828045566c3e4dc0c824112ef083`;
 
-  function lyricSearch(search) {
+  function lyricSearch(search, page) {
     search = '&q=' + search
+    page = '&page=' + page
     let songs = $.ajax({
-      url: `${baseURL}${apiKey}` + search,
+      url: `${baseURL}${apiKey}` + search + page,
       dataType: 'jsonp'
     })
     return songs

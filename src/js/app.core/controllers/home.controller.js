@@ -6,21 +6,26 @@ function HomeController ($scope, SearchService, TemplateService, ClickService) {
 
   function search(search) {
     $("#results").empty();
-    SearchService.lyricSearch(search).then( songs => {
-      let i = 0;
-      let songSnips = {};
-      songs.data.forEach(song=> {
-        while (i < songs.data.length) {
-          if (!songSnips[song.snippet]) {
-            console.log(song.snippet)
-            songSnips[song.snippet] = true
-            // TemplateService.searchResultTpl(song)
+    let a = 0,
+        songSnips = {},
+        artists = {};
+    while (a < 8 || songSnips === undefined || songSnips.length < 10) {
+      SearchService.lyricSearch(search, a).then( songs => {
+        let i = 0;
+        songs.data.forEach(song=> {
+          while (i < songs.data.length) {
+            if (!songSnips[song.snippet] || !artists[song.artist.name]) {
+              songSnips[song.snippet] = true;
+              artists[song.artist.name] = true;
+              TemplateService.searchResultTpl(song);
+            }
+            i++;
           }
-          i++;
-        }
+        })
+        ClickService.findYouTubes()
       })
-      ClickService.findYouTubes()
-    })
+      a++;
+    }
   }
 
 

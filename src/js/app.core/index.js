@@ -7,6 +7,7 @@ import { HomeController } from './controllers/home.controller'
 
 import { SearchService } from './services/search.service'
 import { TemplateService } from './services/template.service'
+import { ClickService } from './services/click.service'
 
 angular
   .module('app.core', ['ui.router'])
@@ -14,4 +15,5 @@ angular
   .controller('HomeController', HomeController)
   .service('SearchService', SearchService)
   .service('TemplateService', TemplateService)
+  .service('ClickService', ClickService)
 ;

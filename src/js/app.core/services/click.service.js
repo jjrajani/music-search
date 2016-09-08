@@ -13,7 +13,7 @@ function ClickService (SearchService) {
         search.push(classes[i]);
       }
       search = search.join(" ")
-      console.log(search)
+      $('#player').removeClass('hidden')
       SearchService.youTubeSearch(search)
     })
   }

@@ -24,7 +24,9 @@ function SearchService () {
       url: `${apis.youTube.baseURL}&q=${search}&key=${apis.youTube.APIKey}`
     }).then( res => {
       let video = res.items[0].id.videoId
-      window.open(`https://www.youtube.com/watch?v=${video}`, '_blank');
+      console.log(video)
+      let player = $("#ytplayer");
+      player[0].src = `https://www.youtube.com/embed/${video}?autoplay=1&origin=http://localhost:8082`;
     })
   }
 
